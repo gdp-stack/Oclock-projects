@@ -1,0 +1,41 @@
+<%- include("partials/header") %>
+<!--  Include headers here -->
+<main class="container py-4">
+<% console.log(quiz.toJSON()) %>
+  <h1 class="text-center m-2"><%=quiz.title %></h1>
+
+  <h2 class="text-center m-2"><%=quiz.description %></h1>
+
+  <h2 class="small text-end">Par <%=quiz.author.firstname%> <%=quiz.author.lastname%></h2>
+
+  <h2 class="small text-end">Date de création : <%=formattedCreatedAt %></h2>
+
+  <h3>Thèmes</h3>
+  <ul class="mb-4 p-0">
+    <% for(tag of quiz.Tags){ %>
+    <li class="badge bg-primary"><%= tag.name %></li>
+    <% } %>
+  </ul>
+
+  <h3>Questions</h3> 
+    <!-- PARTIE QUESTION -->
+    <% for(question of quiz.Questions){ %> 
+    <span class="badge bg-info"><%= question.Level.name %></span>
+    <p class="fw-bold mb-1"><%= question.description %></p>
+    <!-- FIN PARTIE QUESTION -->
+    <div class="mb-3 ms-2">
+      <!-- PARTIE REPONSES -->
+      <% for(answer of question.Answers){ %>
+      <div>
+        <input type="radio" id="#" name="#" value="#">
+        <label for="#"><%=answer.description %></label>
+      </div>
+      <% } %>
+      <!-- PARTIE REPONSES -->
+    </div>
+    <p class="fst-italic text-secondary"><%= question.anecdote %></p>
+    <% } %>
+  
+  <button class="d-block mx-auto btn btn-primary mb-4">Envoyer</button>
+</main>
+<%- include("partials/footer") %>

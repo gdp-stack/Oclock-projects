@@ -1,0 +1,161 @@
+.catalogue-section {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.catalogue-image {
+  flex: 1;
+  max-width: 50%;
+  height: auto;
+  border-radius: 5vw;
+}
+
+.catalogue-section div {
+  flex: 1;
+  padding: 1rem;
+}
+
+.nouveautes-section {
+  margin-bottom: 2rem;
+}
+
+.nouveautes-section h2 {
+  margin-bottom: 1rem;
+}
+
+.nouveautes-section p {
+  margin-bottom: 1.5rem;
+}
+
+.nouveautes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nouveautes img {
+  margin-top: 10px;
+  max-width: 40%;
+  height: auto;
+  align-self: center;
+  border-radius: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #d9534f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #c9302c;
+}
+
+.button-previous {
+  display: inline-block;
+  padding: 0.25rem;
+  background-color: #d9534f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 32px;
+  font-weight: bold;
+  height: fit-content;
+  align-self: center;
+  border: none;
+}
+
+.button-previous:hover {
+  background-color: #c9302c;
+}
+
+.button-next {
+  display: inline-block;
+  padding: 0.25rem;
+  background-color: #d9534f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 32px;
+  font-weight: bold;
+  height: fit-content;
+  align-self: center;
+  border: none;
+}
+
+.button-next:hover {
+  background-color: #c9302c;
+}
+
+.nouveautes article {
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  flex: 1;
+}
+
+.carroussel-element-visible {
+  display: flex;
+}
+
+.carroussel-element-invisible {
+  display: none;
+}
+
+.connection-button {
+  background-color: #d9534f;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.connection-button:hover {
+  background-color: #c9302c;
+}
+
+@media (max-width: 768px) {
+  .catalogue-section {
+    flex-direction: column;
+  }
+
+  .catalogue-section div,
+  .catalogue-section img {
+    padding: 0;
+    width: 100%;
+  }
+
+  .catalogue-section div {
+    text-align: center;
+  }
+
+  .catalogue-image {
+    margin-top: 1rem;
+  }
+
+  .nouveautes-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nouveautes {
+    flex-direction: column;
+    min-width: 40%;
+  }
+}

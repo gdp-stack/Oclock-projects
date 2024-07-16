@@ -1,0 +1,78 @@
+<!-- Header -->
+<%- include('partials/header') %>
+
+<!-- Aside -->
+<%- include('partials/aside') %>
+
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-lg-6">
+          <img class="" src="/images/<%= locals.figurine.name.toLowerCase() %>.png" alt="">
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">
+                <%= locals.figurine.name %>
+                <div class="badge badge-primary badge-pill"><%= locals.figurine.category %></div>
+              </h3>
+              <p class="card-text">Taille réelle : <%= locals.figurine.size %> cm</p>
+              <p class="card-text"><%= locals.figurine.description %></p>
+              <!-- Calcul de la note moyenne -->
+              <p class="card-text">
+                <% 
+                let notationSum = 0; 
+                locals.reviews.forEach(review => {
+                  notationSum += Number(review.note);
+                }); 
+                %>
+                Note moyenne : <%- locals.notationDisplay(notationSum, reviews.length) %> 
+                <br>
+                <a href="#" data-toggle="modal" data-target="#reviewsModal">Détails des avis</a>
+              </p>
+              <h5>$<%= locals.figurine.price %></h5>
+              <p class="card-text">
+                <a href="/bookmarks/<%= locals.figurine.id %>" class="link-add-bookmarks">+ Ajouter aux favoris</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.col-lg-9 -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
+
+<!-- Modale des avis -->
+<div class="modal fade" id="reviewsModal" tabindex="-1" role="dialog" aria-labelledby="reviewsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="reviewsModalLabel">Avis des internautes</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <% locals.reviews.forEach(review => { %>
+        <section>
+          <h5><%= review.title %> &nbsp; <small class="text-muted"><%- locals.notationDisplay(review.note) %></small></h5>
+          <p class="review-author">par <%= review.author %></p>
+          <p><%= review.message %></p>
+        </section>
+        <hr>
+        <% }); %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<%- include('partials/footer') %>

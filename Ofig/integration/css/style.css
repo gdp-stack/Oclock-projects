@@ -1,0 +1,110 @@
+
+body {
+  padding-top: 65px;
+}
+
+.navbar {
+  background-color:rgb(10, 195, 167);
+}
+
+.navbar a {
+  color :rgb(255, 253, 216);
+}
+
+.navbar .nav-item.active {
+  font-weight: bold;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 253, 216)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  border-color: rgb(255, 253, 216);
+}
+
+.link-add-bookmarks {
+  font-size: 0.8em;
+  background-color: rgb(84, 241, 218);
+  border-radius: 5px;
+  padding: 5px;
+  float: right;
+}
+
+.btn-outline-ofig {
+  color: rgb(255, 253, 216);
+  border-color: rgb(255, 253, 216);
+}
+
+.btn-outline-ofig:hover {
+  color: rgb(10, 195, 167);
+  background-color: rgb(255, 253, 216);
+  border-color: rgb(255, 253, 216);
+}
+
+.container-main {
+  min-height: calc(100vh - 185px);
+  /* pourquoi 185px : 65 de margin-top du body, + 120 de hauteur du footer */
+}
+
+.badge-category {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.badge-gentil {
+  background-color: green;
+  color: wheat;
+}
+
+.badge-méchant,
+.badge-mechant {
+  background-color: red;
+  color: wheat;
+}
+
+.badge-animal {
+  background-color: blue;
+  color: wheat;
+}
+
+.img-cart-list {
+  max-width: 100px;
+}
+
+table.table tbody tr td {
+  vertical-align: middle;
+}
+
+.item-description {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+.cart-input {
+  max-width: 100px;
+}
+
+.item-subtotal {
+  font-weight: bold;
+}
+
+.row-total {
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+
+.review-author {
+  font-size: 0.8em;
+  font-style: italic;
+  margin-left: 15px;
+}
+
+
+/* Modal breakpoint is awful in bootstrap */
+@media (min-width: 576px) {
+  .modal-dialog {
+    width: 80%;
+    max-width: unset;
+  }
+}

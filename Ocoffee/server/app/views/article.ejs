@@ -1,0 +1,30 @@
+<%- include("./partials/head"); %>
+
+<main>
+  <div class="product-page">
+    <div class="coffee-illustration-container">
+      <img
+        src="/assets/images-customer/coffees/<%= coffee.picture_url %>"
+        alt="Illustration"
+        class="coffee-illustration"
+      />
+    </div>
+    <div class="coffee-product-details">
+      <h2><%= coffee.name %></h2>
+      <% if (coffee.available === true) { %>
+        <p class="stock-available">En stock  <p></p>
+        <% } else { %>
+        <p class="stock-not-available">Stock épuisé </p>
+        <% } %>
+      <p class="price"><%= coffee.price_per_kg %> € / kg</p>
+      <p><%= coffee.description %></p>
+      <p><span class="underline">Caractéristique principale :</span> <%= coffee.main_characteristic %></p>
+      <p><span class="underline">Origine :</span> <%= coffee.origin %></p>
+      <a href="/catalogue" class="product-button">Retour au Catalogue</a>
+      <a href="/panier/<%= coffee.id %>" class="product-button">Commander</a>
+      <p class="italic">Publié le <%= coffee.date_of_insertion %></p>
+    </div>
+  </div>
+</main>
+
+<%- include("./partials/foot"); %>

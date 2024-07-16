@@ -1,0 +1,36 @@
+<%- include ('partials/nav') %>
+
+<div class="breadcrumbs">
+  <div class="container">
+    <a href="/shop">Home</a>
+    <i class="fa fa-chevron-right breadcrumb-separator"></i>
+    <span>Shop</span>
+  </div>
+</div>
+
+<div class="products-section container">
+  <div class="sidebar">
+    <h3 class="mt-3">
+      <%= products[0].category.toJSON().name %>
+      <!-- todo - Insérer ici le nom de la catégorie -->
+    </h3>
+  </div>
+  <div>
+    <div class="products text-center">
+      <!-- todo - Dynamiser cette liste -->
+      <% products.forEach(product => { %>
+      <div class="product">
+        <a href="/product/<%= product.id %>">
+          <img src="<%= product.image %>" alt="<%= product.title %>" />
+        </a>
+        <a href="/product/<%= product.id %>">
+          <div class="product-name"><%= product.title %></div>
+        </a>
+        <div class="product-price">€<%= product.price %></div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<% include ('partials/foot') %>

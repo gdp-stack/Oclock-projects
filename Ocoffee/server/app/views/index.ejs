@@ -1,0 +1,33 @@
+<%- include("./partials/head"); %>
+
+<main>
+  <section class="catalogue-section" aria-labelledby="catalogue-section">
+    <div>
+      <h1 id="catalogue-section">Découvrez notre catalogue</h1>
+      <p>Découvrez notre large sélection de cafés de qualité.</p>
+      <a href="/catalogue" class="button">Voir le catalogue</a>
+    </div>
+    <img
+      src="/assets/images-customer/about.jpg"
+      alt="Jolie image de cafés qui donne envie"
+      class="catalogue-image"
+    />
+  </section>
+
+  <section class="nouveautes-section" aria-labelledby="nouveautes-section">
+    <h2 id="nouveautes-section">Nouveautés</h2>
+    <div class="nouveautes">
+      <button class="button-previous">&#8592;</button>
+      <% newCoffees.forEach(coffee => { %>
+        <article class="carroussel-element-invisible">
+          <a href="/article/<%= coffee.id %>"><img src="/assets/images-customer/coffees/<%= coffee.picture_url %>" alt="Nouveau produit : <%= coffee.name %>" /></a>
+          <a href="/article/<%= coffee.id %>" class="button">Découvrir</a>
+        </article>
+      <% }); %>
+      <button class="button-next">&#8594;</button>
+    </div>
+  </section>
+  <script src="/js/carrousselAnimation.js" defer></script>
+</main>
+
+<%- include("./partials/foot"); %>

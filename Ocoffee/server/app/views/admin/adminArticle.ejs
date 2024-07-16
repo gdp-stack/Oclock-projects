@@ -1,0 +1,26 @@
+<%- include("../partials/head"); %>
+<main>
+  <div> <%= locals.createdMessage %></div>
+  <section
+    class="a-definir">
+    <h2 class="a-definir" id="catalog-section">Liste des cafés en vitrine</h2>
+    <a href="/admin-article/ajout" class="button-admin-article">Ajouter un article</a>
+  </section>
+
+  <section class="catalog-section" aria-labelledby="catalog-section">
+    <div class="catalog">
+<% coffees.forEach(coffee => { %>
+    <article class="card-admin-article">
+      <div class="catalog-tittle-container">
+        <a href="/article/<%= coffee.id %>"><img src="/assets/images-customer/coffees/<%= coffee.picture_url %>" alt="Produit <%= coffee.id %>" /></a>
+      <h3 class="coffee-tittle"><%= coffee.name %></h3>
+      </div>
+        <a href="/article/<%= coffee.id %>/modification" class="button-admin-article">Modifier</a>
+        <a href="/article/<%= coffee.id %>/suppression" class="button-admin-article">Supprimer</a>
+      </article>
+<% }); %>
+    </div>
+  </section>
+</main>
+
+<%- include("../partials/foot"); %>

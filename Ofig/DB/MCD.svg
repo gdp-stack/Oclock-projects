@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="189" height="263" view_box="0 0 189 263"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:link="http://www.w3.org/1999/xlink">\n\n<desc>Généré par Mocodo 2.3.7 le Mon, 03 Aug 2020 03:52:49</desc>
+
+<rect id="frame" x="0" y="0" width="189" height="263" fill="#ffffbf" stroke="none" stroke-width="0"/>
+
+<!-- Association Concerne -->
+<line x1="48" y1="195" x2="48" y2="60" stroke="#f46d43" stroke-width="2"/>
+<text x="53.0" y="128" fill="#4575b4" font-family="Verdana" font-size="12">0,N</text>
+<line x1="148" y1="60" x2="48" y2="60" stroke="#f46d43" stroke-width="2"/>
+<text x="90" y="77.0" fill="#4575b4" font-family="Verdana" font-size="12">1,1</text>
+<g id="association-Concerne">
+	<path d="M 70 35 a 14 14 90 0 1 14 14 V 60 h -72 V 49 a 14 14 90 0 1 14 -14" fill="#fdae61" stroke="#fdae61" stroke-width="0"/>
+	<path d="M 84 60.0 v 11 a 14 14 90 0 1 -14 14 H 26 a 14 14 90 0 1 -14 -14 V 60.0 H 72" fill="#fee090" stroke="#fee090" stroke-width="0"/>
+	<rect x="12" y="35" width="72" height="50" fill="none" rx="14" stroke="#f46d43" stroke-width="2"/>
+	<line x1="12" y1="60" x2="84" y2="60" stroke="#f46d43" stroke-width="1"/>
+	<text x="19" y="52.7" fill="#000000" font-family="Verdana" font-size="12">Concerne</text>
+</g>
+
+<!-- Entity REVIEW -->
+<g id="entity-REVIEW">
+	<g id="frame-REVIEW">
+		<rect x="116" y="9" width="64" height="25" fill="#abd9e9" stroke="#abd9e9" stroke-width="0"/>
+		<rect x="116" y="34.0" width="64" height="77" fill="#e0f3f8" stroke="#e0f3f8" stroke-width="0"/>
+		<rect x="116" y="9" width="64" height="102" fill="none" stroke="#74add1" stroke-width="2"/>
+		<line x1="116" y1="34" x2="180" y2="34" stroke="#74add1" stroke-width="1"/>
+	</g>
+	<text x="123" y="26.7" fill="#000000" font-family="Verdana" font-size="12">REVIEW</text>
+	<text x="121" y="51.7" fill="#000000" font-family="Verdana" font-size="12">author</text>
+	<line x1="121" y1="54" x2="162" y2="54" stroke="#000000" stroke-width="1"/>
+	<text x="121" y="68.8" fill="#000000" font-family="Verdana" font-size="12">note</text>
+	<text x="121" y="85.8" fill="#000000" font-family="Verdana" font-size="12">title</text>
+	<text x="121" y="102.8" fill="#000000" font-family="Verdana" font-size="12">message</text>
+</g>
+
+<!-- Entity FIGURINE -->
+<g id="entity-FIGURINE">
+	<g id="frame-FIGURINE">
+		<rect x="9" y="136" width="78" height="25" fill="#abd9e9" stroke="#abd9e9" stroke-width="0"/>
+		<rect x="9" y="161.0" width="78" height="93" fill="#e0f3f8" stroke="#e0f3f8" stroke-width="0"/>
+		<rect x="9" y="136" width="78" height="118" fill="none" stroke="#74add1" stroke-width="2"/>
+		<line x1="9" y1="161" x2="87" y2="161" stroke="#74add1" stroke-width="1"/>
+	</g>
+	<text x="17" y="153.7" fill="#000000" font-family="Verdana" font-size="12">FIGURINE</text>
+	<text x="14" y="178.7" fill="#000000" font-family="Verdana" font-size="12">name</text>
+	<line x1="14" y1="181" x2="49" y2="181" stroke="#000000" stroke-width="1"/>
+	<text x="14" y="195.8" fill="#000000" font-family="Verdana" font-size="12">description</text>
+	<text x="14" y="212.8" fill="#000000" font-family="Verdana" font-size="12">size</text>
+	<text x="14" y="229.8" fill="#000000" font-family="Verdana" font-size="12">price</text>
+	<text x="14" y="246.8" fill="#000000" font-family="Verdana" font-size="12">category</text>
+</g>
+</svg>

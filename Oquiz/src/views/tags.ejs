@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+<!--  Include headers here -->
+
+<main class="container py-4">
+  <h1>Thèmes</h1>
+
+  <div>
+    <% tags.forEach(tag => { %>
+    <span class="badge bg-primary p-2 mb-1"><%= tag.name %></span>
+    <% if (tag.Quizzes && tag.Quizzes.length > 0) { %>
+    <ul>
+      <% tag.Quizzes.forEach(quiz => { %>
+      <li><a href="/quiz/<%= quiz.id %>"><%= quiz.title %></a></li>
+      <% }) %> <% } else { %>
+      <p class="ms-2">Aucun quizz dans cette catégorie pour le moment....</p>
+      <% } %>
+    </ul>
+    <% }) %>
+  </div>
+</main>
+
+<%- include("partials/footer") %>

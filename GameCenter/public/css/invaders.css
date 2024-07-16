@@ -1,0 +1,98 @@
+:root {
+  --grey: #d2dae2;
+  --black: #000;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+.page-ctn{
+display: flex;
+flex-direction: column;
+}
+.invader-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.configuration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3148ad;
+  padding: 2rem;
+  width: 100%;
+}
+
+#invader {
+  flex-grow: 1;
+  align-content: center;
+  display: grid;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+.cell {
+  border: 3px #808e9b solid;
+  cursor: pointer;
+}
+
+.form-container {
+  box-sizing: content-box;
+  border-radius: 50em;
+  display: flex;
+  gap: 2px;
+}
+.btn {
+  padding: 1em;
+  border: none;
+  outline: none;
+}
+#form-grid-size {
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+#button-validate {
+  border-radius: 0 0.5em 0.5em 0;
+  background-color: #9b68e4;
+  color: #fff;
+}
+
+/* class color */
+.palette-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 20px;
+  background-color: #4544a2;
+  padding: 15px;
+}
+
+.palette-color {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.selected-color {
+  transform: scale(1.3);
+  border: 2px solid black;
+}
+.plain {
+  background-color: #000;
+}
+.empty {
+  background-color: #d2dae2;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}

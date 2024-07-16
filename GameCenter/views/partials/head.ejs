@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>GameHub</title>
+
+<link rel="stylesheet" href="/css/style.css">
+<% if (locals.game && locals.game.cssFile) { %>
+<link rel="stylesheet" href="/css/<%= locals.game.cssFile %>">
+<% } %>
+
+</head>
+<body>
+    <header>
+        <h1>GameHub</h1>
+        <nav>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+          </ul>
+
+          <!-- Si notre  games.name != null ou innexistant alors on créer la ligne html avec variable -->
+          <% games.forEach(game => { %>
+            <%    if (game.name && game.name != "null") { %>
+                    <ul>
+                    <li><a href="/game/<%= game.name %>"><%= game.title %></a></li>
+                    </ul>
+            <%  } %>
+            <% });%>
+        </nav>
+    </header>

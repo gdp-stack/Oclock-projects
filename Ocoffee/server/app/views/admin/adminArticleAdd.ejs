@@ -1,0 +1,55 @@
+<%- include("../partials/head"); %>
+
+<main>
+  <section class="contact">
+    <h2>Nouvel Article</h2>
+    <form method="post" action="/admin-article/ajout">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="description">Description :</label>
+      <textarea
+        id="description"
+        rows="2"
+        name="description"
+        required
+      ></textarea>
+
+      <label for="reference">Référence :</label>
+      <input type="number" id="reference" name="reference" required />
+
+      <label for="origin">Origine :</label>
+      <input type="text" id="origin" name="origin" required />
+
+      <label for="price_per_kg">Prix au kilo :</label>
+      <input
+        type="number"
+        id="price_per_kg"
+        name="price_per_kg"
+        step="0.01"
+        required
+      />
+
+      <label for="main_characteristic">Caractéristique principale :</label>
+      <input
+        type="text"
+        id="main_characteristic"
+        name="main_characteristic"
+        required
+      />
+
+      <label for="available">Disponibilité :</label>
+      <input type="checkbox" id="available" name="available" />
+
+      <label for="new_product">Nouveau produit :</label>
+      <input type="checkbox" id="new_product" name="new_product" />
+
+      <label for="picture_url">URL de l'image (exemple.png)</label>
+      <input type="text" id="picture_url" name="picture_url" required />
+
+      <button class="contact-form-button" type="submit">Envoyer</button>
+    </form>
+  </section>
+</main>
+
+<%- include("../partials/foot"); %>

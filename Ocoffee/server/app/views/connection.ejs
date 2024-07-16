@@ -1,0 +1,60 @@
+<%- include("./partials/head"); %>
+
+<main>
+  <div class="info-user-message">
+    <%= locals.errorMessage %><%= locals.confirmationMessage %>
+  </div>
+  <div class="connection-page-container">
+    <section class="connection-section" aria-labelledby="connection-section">
+      <form class="connection-form" method="post" action="/authentification">
+        <label class="form-field-tittle" for="login">Pseudo</label
+        ><input
+          class="connection-registration-field"
+          name="login"
+          id="login"
+          type="text"
+        />
+        <label class="form-field-tittle" for="password">Mot de passe</label
+        ><input
+          class="connection-registration-field"
+          name="password"
+          id="password"
+          type="password"
+        />
+        <button type="submit" class="connect-suscribe-button">
+          Se connecter
+        </button>
+      </form>
+    </section>
+    <section
+      class="registration-section"
+      aria-labelledby="registration-section"
+    >
+      <form class="registration-form" method="post" action="/inscription">
+        <label class="form-field-tittle" for="login">Pseudo</label
+        ><input
+          class="connection-registration-field"
+          name="login"
+          id="login"
+          type="text"
+        />
+        <label class="form-field-tittle" for="password">Mot de passe</label
+        ><input
+          class="connection-registration-field"
+          name="password"
+          id="password"
+          type="password"
+        />
+        <button type="submit" class="connect-suscribe-button">
+          S'inscrire
+        </button>
+      </form>
+    </section>
+  </div>
+  <section
+    class="registration-section"
+    aria-labelledby="registration-section"
+  ></section>
+</main>
+
+<%- include("./partials/foot"); %>

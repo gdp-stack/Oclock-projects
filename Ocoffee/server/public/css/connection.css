@@ -1,0 +1,33 @@
+.form-field-tittle {
+  font-weight: bold;
+}
+
+.connection-registration-field {
+  width: fit-content;
+}
+
+.connect-suscribe-button {
+  margin-top: 10px;
+  width: fit-content;
+  background-color: #d9534f;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+}
+
+.connect-suscribe-button:hover {
+  background-color: #c9302c;
+}
+
+.connection-page-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info-user-message {
+  align-self: center;
+}

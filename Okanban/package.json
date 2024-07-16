@@ -1,0 +1,24 @@
+{
+  "name": "s12-okanban-api-gdp-stack",
+  "version": "1.0.0",
+  "description": "[Challenge jour 1](./docs/challenges/challenge-01.md)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "npx nodemon index.js",
+    "db:create": "psql -U okanban -d okanban -f data/create_tables.sql",
+    "db:seed": "psql -U okanban -d okanban -f data/populate_tables.sql",
+    "db:reset": "npm run db:create && npm run db:seed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "pg": "^8.12.0",
+    "sequelize": "^6.37.3"
+  }
+}

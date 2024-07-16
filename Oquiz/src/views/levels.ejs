@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+
+<main class="container">
+
+    <!-- Welcome -->
+    <div class="p-4 mb-3 text-center">
+        <h2 class="h1 my-4">Tous les niveaux</h2>
+        <% if (message){%>
+        <p class="alert alert-primary"><%=message%></p>
+        <% } %>
+    </div>
+
+    <!-- Cards -->
+    <div class="row mb-3 text-center flew-wrap">
+
+        <% for (const level of levels){%>
+        <!-- One card -->
+        <div class="col-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3 class="h2"><%= level.name // on peut ainsi bénéficier de la logique implémentée dans le modèle !!%></h3>
+                </div>
+                <div class="card-body">
+                    <a class="button" href="/levels/<%= level.id %>/delete">supprimer</a>
+                </div>
+            </div>
+        </div>
+        <% }%>
+</main>
+
+<%- include("partials/footer") %>

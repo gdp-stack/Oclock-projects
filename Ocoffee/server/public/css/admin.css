@@ -1,0 +1,94 @@
+.admin-main {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card-admin-article {
+  gap: 5px;
+}
+
+.button-admin-article {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #d9534f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button-admin-article:hover {
+  background-color: #c9302c;
+}
+
+.button-admin-update-article {
+  display: block;
+  width: fit-content;
+  padding: 0.75rem 1.25rem;
+  font-size: 20px;
+  background-color: #d9534f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.button-admin-update-article:hover {
+  background-color: #c9302c;
+}
+
+.admin-main-message {
+}
+
+.admin-main-tittle {
+  margin-bottom: 10px;
+}
+
+.message-section {
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.message-contact-email {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.message-desc {
+  display: block;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.message-tittle-container {
+}
+
+.message-tittle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.stock-available-update {
+  color: #45c980;
+  display: inline;
+  padding-left: 3%;
+}
+
+.stock-not-available-update {
+  color: #e76f51;
+  display: inline;
+  padding-left: 3%;
+}
+
+.file-input {
+}

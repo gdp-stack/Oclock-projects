@@ -1,0 +1,163 @@
+.catalog-picture-section {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 30vh;
+  height: 30vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.catalog-illustration {
+  object-fit: contain;
+  object-position: center;
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: -1;
+}
+
+.catalog-tittle {
+  font-weight: bold;
+  font-size: 40px;
+  position: absolute;
+  left: 40%;
+  bottom: 40%;
+  z-index: 1;
+  color: #fff;
+}
+
+.catalog-section {
+  margin-bottom: 2rem;
+}
+
+.catalog-section h2 {
+  margin-bottom: 1rem;
+}
+
+.catalog {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.catalog article {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+  text-align: center;
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  height: 300px;
+  max-height: 300px;
+}
+
+.catalog img {
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+}
+
+/* HOVER pour au survoler de l'image à coder ici , + mettre lien produit en html*/
+/*  */
+
+.catalog-tittle-container {
+  overflow: hidden;
+  width: 80%;
+  max-width: 80%;
+  height: 200px;
+  max-height: 200px;
+  align-self: center;
+  margin-top: 5%;
+  border-radius: 20px;
+  position: relative;
+  && :hover {
+    opacity: 0.8;
+  }
+}
+
+.coffee-tittle {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  right: 20%;
+  color: #fff;
+  font-style: italic;
+}
+
+.catalog .button {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background-color: #d9534f;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-top: auto;
+  min-height: 50px;
+  max-height: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+.catalog .button:hover {
+  background-color: #c9302c;
+}
+
+@media (max-width: 768px) {
+  .catalog-picture-section {
+    flex-direction: column;
+  }
+
+  .catalog-picture-section img,
+  .catalog-picture-section div {
+    padding: 0;
+    width: 100%;
+  }
+
+  .catalog-picture-section div {
+    text-align: center;
+  }
+
+  .catalog-illustration {
+    margin-top: 1rem;
+  }
+
+  .catalog-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .catalog {
+    flex-direction: column;
+    min-width: 40%;
+  }
+
+  .catalog article {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .catalog img {
+    height: 150px;
+    max-height: 150px;
+    margin-bottom: 20px;
+  }
+  .catalog-tittle {
+    font-size: 32px;
+    left: 30%;
+  }
+}

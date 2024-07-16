@@ -1,0 +1,41 @@
+<%- include("../partials/head"); %>
+
+<main>
+  <div class="product-page">
+    <div class="coffee-illustration-container">
+      <img
+        src="/assets/images-customer/coffees/<%= coffee.picture_url %>"
+        alt="Illustration"
+        class="coffee-illustration"
+      />
+    </div>
+    <form action="/article/<%= coffee.id %>/modification" method="POST">
+      <span class="underline">Nouvelle image :</span><input type="text" id="picture_url" name="picture_url" value="<%= coffee.picture_url %>">
+      <div class="coffee-product-details">
+        
+          <h2><span class="underline">Nom :</span><input type="text" id="name" name="name" value="<%= coffee.name %>" class="editable-input"></h2>
+          <p><span class="underline">Référence :</span><input type="number" id="reference" name="reference" value="<%= coffee.reference %>" /></p>
+          <% if (coffee.available === true) { %>
+            <p class="stock-available-update">En stock</p>
+          <% } else { %>
+            <p class="stock-not-available-update">Stock épuisé</p>
+          <% } %>
+          <label for="available">Disponibilité</label>
+          <input type="checkbox" id="available" name="available" <%= coffee.available === true ? 'checked' : '' %>>
+
+          <p><span class="underline">Prix :</span><p class="price"><input type="text" id="price_per_kg" name="price_per_kg" value="<%= coffee.price_per_kg %>" class="editable-input"></p>
+          <p><span class="underline">Description :</span><input type="text" id="description" name="description" value="<%= coffee.description %>" class="editable-input"></p>
+          <p><span class="underline">Caractéristique principale :</span> <input type="text" id="main_characteristic" name="main_characteristic" value="<%= coffee.main_characteristic %>" class="editable-input"></p>
+          <p><span class="underline">Origine :</span> <input type="text" id="origin" name="origin" value="<%= coffee.origin %>" class="editable-input"></p>
+
+          <label for="new_product">Nouveau produit</label>
+          <input type="checkbox" id="new_product" name="new_product">
+
+          <button type="submit" class="button-admin-update-article">Mettre à jour</button>
+        
+      </div>
+    </form>
+  </div>
+</main>
+
+<%- include("../partials/foot"); %>

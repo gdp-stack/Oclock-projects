@@ -1,0 +1,31 @@
+<%- include("./partials/head"); %>
+
+<main>
+  <section
+    class="catalog-picture-section"
+    aria-labelledby="catalog-picture-section"
+  >
+    <img
+      src="/assets/images/catalogue-picture.webp"
+      alt="Jolie image du catalogue"
+      class="catalog-illustration"
+    />
+    <h2 class="catalog-tittle" id="catalog-section">Notre Catalogue</h2>
+  </section>
+
+  <section class="catalog-section" aria-labelledby="catalog-section">
+    <div class="catalog">
+<% coffees.forEach(coffee => { %>
+    <article>
+      <div class="catalog-tittle-container">
+        <a href="/article/<%= coffee.id %>"><img src="/assets/images-customer/coffees/<%= coffee.picture_url %>" alt="Produit <%= coffee.id %>" /></a>
+      <h3 class="coffee-tittle"><%= coffee.name %></h3>
+      </div>
+        <a href="/article/<%= coffee.id %>" class="button">Découvrir</a>
+      </article>
+<% }); %>
+    </div>
+  </section>
+</main>
+
+<%- include("./partials/foot"); %>

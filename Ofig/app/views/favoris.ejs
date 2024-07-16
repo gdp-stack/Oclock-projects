@@ -1,0 +1,55 @@
+  <!-- Header -->
+<%- include('partials/header') %>
+
+
+  <!-- Page Content -->
+  <div class="container container-main">
+
+
+      <div class="row">
+        <div class="col">
+          <h3 class="text-center">Votre liste de préférences</h3>
+
+          
+          <table class="table">
+            <thead>
+              <th>Article</th>
+              <th>Prix HT</th>
+              <th></th>
+            </thead>
+            <tbody>
+            <% if (typeof locals.favoritesListObjects !== undefined) { %>
+              <% locals.favoritesListObjects.forEach(favorite => { %>
+              <tr>
+                <td>
+                  <img class="img-thumbnail img-cart-list" src="/images/<%= favorite.name.toLowerCase() %>.png" alt="">
+                  <div class="item-description">
+                      <h5 class="item-title"><%= favorite.name %></h5>
+                  </div>
+                </td>
+
+                <td>
+                  <p class="item-subtotal"><%= favorite.price %></p>
+                </td>
+
+                <td>
+                  <a href="/bookmarks/<%= favorite.id %>/delete">Enlever de la liste</a>
+                </td>
+              </tr>
+              <% }); %>
+            <% }; %>
+          </table>
+          <div class="row">
+            <div class="col text-right">
+                <a class="btn btn-success" href="/">
+                  Retour à l'accueil
+                </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+<!-- Footer -->
+<%- include('partials/footer') %>

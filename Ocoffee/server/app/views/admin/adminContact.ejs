@@ -1,0 +1,21 @@
+<%- include("../partials/head"); %>
+<main class="admin-main-message">
+  <section
+    class="admin-main-tittle-container">
+    <h2 class="admin-main-tittle" id="catalog-section">Liste des messages reçus</h2>
+  </section>
+
+  <section class="message-section">
+<% messages.forEach(message => { %> 
+    <article class="message-container">
+        <div class="message-tittle-container">
+            <h3 class="message-tittle"><%= message.message_object %></h3>
+        </div>
+        <aside class="message-desc">Message N°<%= message.id %> envoyé le <%= message.date_of_contact %> par <b><%= message.first_name %> <%= message.last_name %> (<%= message.email %>)</b></aside>
+        <p><%= message.message_content %></p>
+    </article>
+<% }); %>
+  </section>
+</main>
+
+<%- include("../partials/foot"); %>

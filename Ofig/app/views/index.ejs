@@ -1,0 +1,50 @@
+<!-- Header -->
+<%- include('partials/header') %>
+
+<!-- Aside -->
+<%- include('partials/aside') %>
+
+      <div class="col-lg-9">
+
+        <div class="row">
+
+          <% locals.figurines.forEach(figurine => { %>
+            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="/article/<%= figurine.id %>">
+                <img class="card-img-top" src="./images/<%= figurine.name.toLowerCase() %>.png" alt=""> 
+                <div class="badge-category badge badge-pill badge-gentil"><%= figurine.category %></div>
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="/article/<%= figurine.id %>"><%= figurine.name %></a>
+                </h4>
+                <h5><%= figurine.price %></h5>
+                <p class="card-text"><%= figurine.description %></p>
+              </div>
+              <div class="card-footer">
+                <% let selectedFigurine = locals.reviews.filter(review => review.figurine_id === figurine.id ); %>
+                <% let notationSum = 0; %>
+                <% selectedFigurine.forEach(figurine => notationSum += Number(figurine.note)) %> 
+                <small class="text-muted"><%- locals.notationDisplay(notationSum, selectedFigurine.length) %></small>
+                <a href="/bookmarks/<%= figurine.id %>" class="link-add-bookmarks">+ Ajouter aux favoris</a>
+              </div>
+            </div>
+          </div>
+
+          <% }) %>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <%- include('partials/footer') %>

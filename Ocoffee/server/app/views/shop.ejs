@@ -1,0 +1,26 @@
+<%- include("./partials/head"); %>
+
+<main>
+    <div class="cart-and-form-contenair">
+        <div class="cart-contenair">
+            <ul class="cart-listing">
+                <li class="cart-title-element"><p></p><p>Produit(s)</p><p>Prix</p><p>Quantité(s) (kg)</p>
+                </li>
+                <% cart.forEach(coffee => { %>
+                    <li class="cart-element">
+                        <a href="/article/<%= coffee.id %>" ><img class="cart-element-picture" alt="Image du café <%= coffee.name %>" src="/assets/images-customer/coffees/<%= coffee.picture_url %>"/></a>
+                        <span class="element-name"><%= coffee.name %> </span>
+                        <span class="element-price"><%= coffee.price_per_kg %> € / kg</span>
+                        <form class="cart-quantity-form">
+                            <input class="number-form" type="number" min="1" value="1" id="<%= coffee.id %>" name="<%= coffee.id %>"/>
+                            <a class="delete-button" href="/panier/supprimer/<%= coffee.id %>">-</a>
+                        </form>
+                    </li>
+                <% }); %>
+            </ul>    
+        </div>
+    </div>
+    <div class="order-button-position"><a href="#" class="order-button">Confirmer la commande</a></div>
+</main>
+
+<%- include("./partials/foot"); %>
