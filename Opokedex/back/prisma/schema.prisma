@@ -1,0 +1,69 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("PG_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Pokemon {
+  id    Int     @id @default(autoincrement())
+  name  String
+  hp Int
+  atk Int
+  def Int
+  atk_spe Int
+  def_spe Int
+  speed Int
+
+  pokemon_type PokemonType[]
+  team_pokemon TeamPokemon[]
+
+  @@map("pokemon")
+}
+
+model Team {
+  id      Int      @id @default(autoincrement())
+  name   String
+  description String
+
+  team_pokemon TeamPokemon[]
+
+  @@map("team")
+}
+
+model Type {
+  id      Int      @id @default(autoincrement())
+  name   String
+  color String
+
+  pokemon_type PokemonType[]
+
+  @@map("type")
+}
+
+model PokemonType {
+  id      Int      @id @default(autoincrement())
+  pokemon_id   Int
+  type_id Int
+
+  pokemon    Pokemon @relation(fields: [pokemon_id], references: [id])
+  type       Type    @relation(fields: [type_id], references: [id])
+
+  @@unique([pokemon_id, type_id])
+  @@map("pokemon_type")
+}
+
+model TeamPokemon {
+  id      Int      @id @default(autoincrement())
+  pokemon_id   Int
+  team_id Int
+
+  pokemon    Pokemon @relation(fields: [pokemon_id], references: [id])
+  team       Team    @relation(fields: [team_id], references: [id])
+
+  @@unique([pokemon_id, team_id])
+  @@map("team_pokemon")
+}
+
