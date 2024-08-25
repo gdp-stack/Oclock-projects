@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>oKanban</title>
+
+    <!-- Bulma (make sure to use last updated version)-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css"
+    />
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="/src/assets/css/style.css" />
+
+    <!-- Font Awesome (using version 5, as version >=6 does not provide an out-of-the-box CDN)-->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    ></script>
+
+    <!-- Custom JS -->
+    <script defer src="/src/assets/js/index.js" type="module"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="title is-1 my-5">oKanban</h1>
+    </header>
+
+    <main class="flex-container">
+      <div id="lists-container" class="flex-container">
+        <!-- List test templating -->
+        <section class="message is-info" slot="list-name">
+          <div class="message-header">
+            <div slot="list-name">Perso</div>
+            <span class="icon is-clickable"><i class="fas fa-plus"></i></span>
+          </div>
+        </section>
+
+        <!-- List -->
+        <section class="message is-info">
+          <div class="message-header">
+            <div>Perso</div>
+            <span class="icon is-clickable"><i class="fas fa-plus"></i></span>
+          </div>
+
+          <div class="message-body">
+            <!-- Card -->
+            <article class="card">
+              <div class="card-header">
+                <div class="card-header-title has-text-weight-medium">
+                  Faire les courses
+                </div>
+                <div class="card-header-icon">
+                  <span class="icon has-text-success"
+                    ><i class="fas fa-pencil-alt"></i
+                  ></span>
+                  <span class="icon has-text-danger ml-2"
+                    ><i class="fas fa-trash-alt"></i
+                  ></span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- List -->
+        <section class="message is-info">
+          <div class="message-header">
+            <div>Oclock</div>
+            <span class="icon is-clickable"><i class="fas fa-plus"></i></span>
+          </div>
+
+          <div class="message-body">
+            <!-- Card -->
+            <article class="card">
+              <div class="card-header">
+                <div class="card-header-title has-text-weight-medium">
+                  Réviser le front
+                </div>
+                <div class="card-header-icon">
+                  <span class="icon has-text-success"
+                    ><i class="fas fa-pencil-alt"></i
+                  ></span>
+                  <span class="icon has-text-danger ml-2"
+                    ><i class="fas fa-trash-alt"></i
+                  ></span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card -->
+            <article class="card">
+              <div class="card-header">
+                <div class="card-header-title has-text-weight-medium">
+                  Mettre en place les formulaires HTML
+                </div>
+                <div class="card-header-icon">
+                  <span class="icon has-text-success"
+                    ><i class="fas fa-pencil-alt"></i
+                  ></span>
+                  <span class="icon has-text-danger ml-1"
+                    ><i class="fas fa-trash-alt"></i
+                  ></span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card -->
+            <article class="card">
+              <div class="card-header">
+                <div class="card-header-title has-text-weight-medium">
+                  Apprendre à se servir de fetch
+                </div>
+                <div class="card-header-icon">
+                  <span class="icon has-text-success"
+                    ><i class="fas fa-pencil-alt"></i
+                  ></span>
+                  <span class="icon has-text-danger ml-1"
+                    ><i class="fas fa-trash-alt"></i
+                  ></span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card -->
+            <article class="card">
+              <div class="card-header">
+                <div class="card-header-title has-text-weight-medium">
+                  Brancher l'API
+                </div>
+                <div class="card-header-icon">
+                  <span class="icon has-text-success"
+                    ><i class="fas fa-pencil-alt"></i
+                  ></span>
+                  <span class="icon has-text-danger ml-1"
+                    ><i class="fas fa-trash-alt"></i
+                  ></span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Add a list button -->
+      <section class="message">
+        <div class="message-header">
+          <div>Ajouter une liste</div>
+        </div>
+        <div class="message-body">
+          <button class="button is-large is-fullwidth">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Add a list modal -->
+    <div class="modal modal1" id="add-list-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <form>
+          <div class="modal-card-head">
+            <p class="modal-card-title">Ajouter une liste</p>
+            <button
+              class="delete close"
+              type="button"
+              aria-label="close"
+            ></button>
+          </div>
+
+          <div class="modal-card-body">
+            <label class="label">Nom</label>
+            <input
+              class="input"
+              type="text"
+              name="name"
+              placeholder="Nom de la liste"
+            />
+          </div>
+
+          <div class="modal-card-foot">
+            <button class="button is-success">Ajouter</button>
+            <button class="button close" type="button">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modify a list name modal -->
+    <div class="modal modal2" id="modify-list-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <form>
+          <div class="modal-card-head">
+            <p class="modal-card-title">Modifier le nom de la liste</p>
+            <button
+              class="delete close"
+              type="button"
+              aria-label="close"
+            ></button>
+          </div>
+
+          <div class="modal-card-body">
+            <label class="label">Nom</label>
+            <input
+              class="input"
+              type="text"
+              name="name"
+              placeholder="Nom de la liste"
+            />
+          </div>
+
+          <div class="modal-card-foot">
+            <button class="button is-success">Modifier</button>
+            <button class="button close" type="button">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Delete a list modal -->
+    <div class="modal modal3" id="delete-list-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <form>
+          <div class="modal-card-head">
+            <p class="modal-card-title">
+              Êtes vous sûr de vouloir supprimer la liste ?
+            </p>
+            <button
+              class="delete close"
+              type="button"
+              aria-label="close"
+            ></button>
+          </div>
+
+          <div class="modal-card-foot">
+            <button class="button is-success">Oui</button>
+            <button class="button close" type="button">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <!-- Template pour une liste -->
+  <template id="list-template">
+    <section class="message is-info" slot="list-id">
+      <div class="message-header">
+        <div class="list-name" slot="list-name"></div>
+        <span class="icon is-clickable" slot="add-card-button"
+          ><i class="fas fa-plus"></i
+        ></span>
+      </div>
+
+      <div class="message-body" slot="list-content">
+        <!-- Cards go here -->
+      </div>
+    </section>
+  </template>
+</html>

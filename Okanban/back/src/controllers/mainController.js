@@ -2,7 +2,7 @@ const database = require("../models/sequelize");
 
 const mainController = {
   homePage: (req, res) => {
-    res.send("Heyyyy BG");
+    res.send("Heyyyyy");
   },
 };
 

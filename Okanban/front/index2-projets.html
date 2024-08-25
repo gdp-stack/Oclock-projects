@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>oKanban</title>
+
+    <!-- Bulma (make sure to use last updated version)-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css"
+    />
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="/src/assets/css/style.css" />
+
+    <!-- Font Awesome (using version 5, as version >=6 does not provide an out-of-the-box CDN)-->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    ></script>
+
+    <!-- Custom JS -->
+    <script defer src="/src/assets/js/index.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="title is-1 my-5">oKanban</h1>
+    </header>
+
+    <main class="flex-container">
+      <div id="lists-container" class="flex-container">
+        <!-- Project test templating -->
+        <section class="message is-info">
+          <div class="message-header">
+            <div>Perso</div>
+            <span class="icon is-clickable"><i class="fas fa-plus"></i></span>
+          </div>
+        </section>
+      </div>
+
+      <!-- Add a list button -->
+      <section class="message">
+        <div class="message-header">
+          <div>Ajouter une liste</div>
+        </div>
+        <div class="message-body">
+          <button class="button is-large is-fullwidth">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Add a list modal -->
+    <!-- (add the 'is-active' class to see it : https://bulma.io/documentation/components/modal/#javascript-implementation-example) -->
+    <div class="modal" id="add-list-modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <form>
+          <div class="modal-card-head">
+            <p class="modal-card-title">Ajouter une liste</p>
+            <button
+              class="delete close"
+              type="button"
+              aria-label="close"
+            ></button>
+          </div>
+
+          <div class="modal-card-body">
+            <label class="label">Nom</label>
+            <input
+              class="input"
+              type="text"
+              name="name"
+              placeholder="Nom de la liste"
+            />
+          </div>
+
+          <div class="modal-card-foot">
+            <button class="button is-success">Ajouter</button>
+            <button class="button close" type="button">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
