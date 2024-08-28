@@ -36,15 +36,16 @@ const RecipeDetail = ({ recipes }: PropsRecip) => {
             <span className="bg-blue-500 text-white font-bold px-4 py-1 rounded">
               {ingredient.quantity}
             </span>
-            <span className="text-lg">{ingredient.name}</span>
+            <span className="text-lg text-gray-700">{ingredient.name}</span>
           </div>
         ))}
       </div>
 
-      <div className="bg-gray-100 p-4 rounded-lg shadow">
-        <ul className="list-disc pl-5 space-y-2">
+      <div className="bg-gray-100 p-4 text-left rounded-lg shadow">
+        <ul className="pl-5 space-y-2">
           {selectedRecipe.instructions.map((instruction, index) => (
             <li key={index} className="text-gray-700">
+              <span className="text-blue-300 font-bold">&#95;&#95; </span>
               {instruction}
             </li>
           ))}

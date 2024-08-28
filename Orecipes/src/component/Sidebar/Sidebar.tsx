@@ -1,16 +1,29 @@
-import React from "react";
+import type { recipes } from '../../@types/types.d';
+import { NavLink } from 'react-router-dom';
 
-const Sidebar = () => {
+type PropsRecipes = {
+  recipes: recipes[];
+};
+
+const Sidebar = ({ recipes }: PropsRecipes) => {
   return (
-    <div className="bg-blue-900 text-white h-screen w-64 p-6">
-      <div className="text-2xl font-bold mb-8">Accueil</div>
+    <div className="bg-blue-900 text-white w-64 p-6">
+      <div className="text-2xl font-bold mb-8">
+        <NavLink to="/">Accueil</NavLink>
+      </div>
       <ul>
-        <li className="mb-4 cursor-pointer">Cookies au beurre de cacahuète</li>
-        <li className="mb-4 cursor-pointer">Macaron framboisier</li>
-        <li className="mb-4 cursor-pointer">Tarte au citron meringuée</li>
-        <li className="mb-4 cursor-pointer">Amandier</li>
-        <li className="mb-4 cursor-pointer">Fondant au chocolat sans gluten</li>
-        <li className="mb-4 cursor-pointer">Tarte banoffee</li>
+        {recipes.map((recipe) => (
+          <li key={recipe.id} className="mb-4 cursor-pointer">
+            <NavLink
+              to={`/${recipe.slug}`}
+              className={({ isActive }) =>
+                `hover:text-white hover:font-bold ${isActive ? 'text-white font-bold' : ''}`
+              }
+            >
+              {recipe.title}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </div>
   );

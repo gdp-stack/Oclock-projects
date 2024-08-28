@@ -15,7 +15,7 @@ const RecipeCard = ({ recipe }: PropsRecip) => {
       />
       <div className="p-4">
         <h3 className="font-bold text-gray-700">{recipe.title}</h3>
-        <p className="text-gray-500">Difficulté: {recipe.difficulty}</p>
+        <p className="text-gray-500 mb-2">Difficulté: {recipe.difficulty}</p>
         <Link
           to={`/${recipe.slug}`}
           className="mt-4 bg-blue-500 text-white rounded px-4 py-2 inline-block"
