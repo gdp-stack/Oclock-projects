@@ -1,0 +1,29 @@
+{
+  "name": "okanban",
+  "version": "1.0.0",
+  "description": "Un superbe kanban à tester et à mettre en production !",
+  "type": "module",
+  "scripts": {
+    "install": "npm install --prefix api",
+    "start": "npm run start --prefix api",
+    "dev": "concurrently \"npm run dev:back\" \"npm run dev:front\"",
+    "dev:back": "npm run dev --prefix api",
+    "dev:front": "npm run dev --prefix client",
+    "db:create": "npm run db:create --prefix api",
+    "db:seed": "npm run db:seed --prefix api",
+    "db:reset": "npm run db:create && npm run db:seed",
+    "postinstall": "npm install --prefix client --include=dev",
+    "build": "npm run build --prefix client"
+  },
+  "keywords": [
+    "kanban",
+    "board",
+    "gestion de projet",
+    "SPA",
+    "API REST"
+  ],
+  "author": "kanban@oclock.io",
+  "license": "ISC",
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e",
+  "main": "eslint.config.js"
+}

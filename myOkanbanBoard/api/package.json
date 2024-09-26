@@ -1,0 +1,37 @@
+{
+  "name": "okanban-api",
+  "version": "1.0.0",
+  "description": "Serveur d'API REST de l'application O'kanban.",
+  "directories": {
+    "doc": "docs"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "db:create": "node src/migrations/createTables.js",
+    "db:seed": "node src/migrations/populateTables.js",
+    "db:reset": "npm run db:create && npm run db:seed"
+  },
+  "keywords": [
+    "kanban",
+    "back",
+    "API REST"
+  ],
+  "author": "kanban@oclock.io",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "joi": "^17.13.3",
+    "pg": "^8.12.0",
+    "sanitize-html": "^2.13.0",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "eslint": "^9.5.0",
+    "nodemon": "^3.1.4"
+  }
+}
