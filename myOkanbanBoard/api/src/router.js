@@ -20,7 +20,7 @@ router.post("/cards", cw(cardController.createCard));
 router.patch("/cards/:id", cw(cardController.updateCard));
 router.delete("/cards/:id", cw(cardController.deleteCard));
 
-router.get("/lists/:id/cards", cw(cardController.getAllCardsOfList)); // Au choix, dans cardController ou listController
+router.get("/lists/:id/cards", cw(cardController.getAllCardsOfList));
 
 // == Routes des tags ==
 router.get("/tags", cw(tagController.getAllTags));
@@ -29,8 +29,10 @@ router.post("/tags", cw(tagController.createTag));
 router.patch("/tags/:id", cw(tagController.updateTag));
 router.delete("/tags/:id", cw(tagController.deleteTag));
 router.put("/cards/:cardId/tags/:tagId", cw(tagController.assignTagToCard));
-router.delete("/cards/:cardId/tags/:tagId", cw(tagController.removeTagFromCard));
-
+router.delete(
+  "/cards/:cardId/tags/:tagId",
+  cw(tagController.removeTagFromCard)
+);
 
 // Middleware 404
 router.use((req, res) => {

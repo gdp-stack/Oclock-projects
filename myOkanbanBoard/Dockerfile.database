@@ -13,7 +13,6 @@ ENV POSTGRES_DB=okanbandevops
 ENV POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
 
 # Ajout des scripts d'initialisation
-# @see: https://hub.docker.com/_/postgres
 COPY ./api/data/create_tables.sql /docker-entrypoint-initdb.d/create_table.sql
 
 # Documenter le port 5432 du conteneur 

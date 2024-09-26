@@ -1,7 +1,7 @@
 {
   "name": "okanban-api",
   "version": "1.0.0",
-  "description": "Serveur d'API REST de l'application O'kanban.",
+  "description": "Serveur d'API REST de l'application myKanbanBoard.",
   "directories": {
     "doc": "docs"
   },
@@ -18,7 +18,7 @@
     "back",
     "API REST"
   ],
-  "author": "kanban@oclock.io",
+  "author": "gdp-stack",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

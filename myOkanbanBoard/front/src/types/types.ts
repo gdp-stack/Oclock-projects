@@ -11,7 +11,7 @@ export interface TagType {
   color: string;
   created_at: string;
   updated_at: string;
-  card_has_tag: CardHasTagType; // Relation entre la carte et le tag
+  card_has_tag: CardHasTagType;
 }
 
 export interface CardType {
@@ -21,8 +21,8 @@ export interface CardType {
   color: string;
   created_at: string;
   updated_at: string;
-  list_id: number | null; // Peut être null si la carte n'a pas de liste
-  tags: TagType[]; // Tableau de tags associés à la carte
+  list_id: number | null;
+  tags: TagType[];
 }
 
 export interface ListType {
@@ -30,5 +30,5 @@ export interface ListType {
   name: string;
   created_at: string;
   updated_at: string;
-  cards: CardType[]; // Tableau de cartes associées à la liste
+  cards: CardType[];
 }

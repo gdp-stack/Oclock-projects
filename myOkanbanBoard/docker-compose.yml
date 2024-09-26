@@ -2,31 +2,33 @@ services:
   db:
     container_name: okanban-db
     image: postgres:16
-    environnement:
+    environment:
       - POSTGRES_USER=okanbandevops
       - POSTGRES_PASSWORD=okanbandevops
       - POSTGRES_DB=okanbandevops
     volumes:
       # repertoire des script d'init
-
+      - ./api/data/create_table.sql:/docker-entrypoint-initdb.d/create_table.sql
       #repertoire des volumes
-      - pg-okanbandevops:
+      - pg-okanbandevops:/var/lib/postgresql/data
 
   api:
     container_name: okanban-api
     build:
       context: ./api
       dockerfile: Dockerfile.api
-    depends_on: db
+    depends_on:
+      - db
     ports:
       - 3000:3000
 
   front:
     container_name: okanban-client
     build:
-      context: ./client
+      context: ./front
       dockerfile: Dockerfile.client
-    depends_on: api
+    depends_on:
+      - api
     ports:
       - 4173:4173
 

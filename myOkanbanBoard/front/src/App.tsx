@@ -8,7 +8,7 @@ import ListEditModal from "./components/custom/ListEditModal/ListEditModal";
 import CardAddModal from "./components/custom/CardAddModal/CardAddModal";
 import CardDeleteModal from "./components/custom/CardDeleteModal/CardDeleteModal";
 import CardEditModal from "./components/custom/CardEditModal/CardEditModal";
-import { initListsDragAndDrop } from "./lib/dragDrop"; // Import de la fonction
+import { initListsDragAndDrop } from "./lib/dragDrop";
 
 function App() {
   const [lists, setLists] = useState([]);
@@ -21,9 +21,8 @@ function App() {
   const [modalDeleteCard, setModalDeleteCard] = useState(false);
   const [modalEditCard, setModalEditCard] = useState(false);
 
-  const listsContainerRef = useRef<HTMLDivElement>(null); // Use useRef to reference the lists container
+  const listsContainerRef = useRef<HTMLDivElement>(null);
 
-  // Fetch lists from API on component mount
   useEffect(() => {
     async function fetchLists() {
       const response = await axios.get("http://localhost:3000/api/lists");
@@ -33,12 +32,11 @@ function App() {
     fetchLists();
   }, []);
 
-  // Initialize Sortable.js for the lists container
   useEffect(() => {
     if (listsContainerRef.current && lists) {
-      initListsDragAndDrop(listsContainerRef.current, lists, setLists); // Utilisation de la fonction importée
+      initListsDragAndDrop(listsContainerRef.current, lists, setLists);
     }
-  }, [lists]); // Reinitialize Sortable if the lists change
+  }, [lists]);
 
   return (
     <div className="relative h-full w-full min-h-screen min-w-screen p-8">
@@ -71,70 +69,72 @@ function App() {
         ref={listsContainerRef}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
       >
-        {lists?.map((list) => (
-          <div key={list.id} className="flex flex-col">
-            <article className="w-full rounded p-2 gap-1 text-white font-bold bg-blue-700 flex justify-between text-base">
-              <div className="break-words ">{list.title}</div>
-              <div className="flex gap-2 items-center">
-                <FaArrowsAlt
-                  style={{ color: "white", cursor: "pointer" }}
-                  slot="move-list-handle"
-                />
-                <FaEdit
-                  style={{ color: "white", cursor: "pointer" }}
-                  onClick={() => {
-                    setListId(list.id);
-                    setModalEditList(true);
-                  }}
-                />
-                <FaTrash
-                  style={{ color: "white", cursor: "pointer" }}
-                  onClick={() => {
-                    setListId(list.id);
-                    setModalDeleteList(true);
-                  }}
-                />
-                <FaPlus
-                  style={{ color: "white", cursor: "pointer" }}
-                  onClick={() => {
-                    setListId(list.id);
-                    setModalAddCard(true);
-                  }}
-                />
+        {lists?.map((list) =>
+          list && list.title ? (
+            <div key={list.id} className="flex flex-col">
+              <article className="w-full rounded p-2 gap-1 text-white font-bold bg-blue-700 flex justify-between text-base">
+                <div className="break-words">{list.title}</div>
+                <div className="flex gap-2 items-center">
+                  <FaArrowsAlt
+                    style={{ color: "white", cursor: "pointer" }}
+                    slot="move-list-handle"
+                  />
+                  <FaEdit
+                    style={{ color: "white", cursor: "pointer" }}
+                    onClick={() => {
+                      setListId(list.id);
+                      setModalEditList(true);
+                    }}
+                  />
+                  <FaTrash
+                    style={{ color: "white", cursor: "pointer" }}
+                    onClick={() => {
+                      setListId(list.id);
+                      setModalDeleteList(true);
+                    }}
+                  />
+                  <FaPlus
+                    style={{ color: "white", cursor: "pointer" }}
+                    onClick={() => {
+                      setListId(list.id);
+                      setModalAddCard(true);
+                    }}
+                  />
+                </div>
+              </article>
+              <div className="bg-cyan-200 text-center">
+                <ul>
+                  {list.cards?.map((card) => (
+                    <li
+                      key={card.id}
+                      className="flex justify-between border border-black border-solid p-2 px-4 m-2 bg-white text-sm"
+                    >
+                      {card.content}
+                      <div className="flex gap-1">
+                        <FaEdit
+                          style={{ color: "green", cursor: "pointer" }}
+                          onClick={() => {
+                            setListId(list.id);
+                            setCardId(card.id);
+                            setModalEditCard(true);
+                          }}
+                        />
+                        <FaTrash
+                          style={{ color: "red", cursor: "pointer" }}
+                          onClick={() => {
+                            setListId(list.id);
+                            setCardId(card.id);
+                            setModalDeleteCard(true);
+                          }}
+                        />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </article>
-            <div className="bg-cyan-200 text-center">
-              <ul className="">
-                {list.cards?.map((card) => (
-                  <li
-                    key={card.id}
-                    className="flex justify-between border border-black border-solid p-2 px-4 m-2 bg-white text-sm"
-                  >
-                    {card.content}
-                    <div className="flex gap-1">
-                      <FaEdit
-                        style={{ color: "green", cursor: "pointer" }}
-                        onClick={() => {
-                          setListId(list.id);
-                          setCardId(card.id);
-                          setModalEditCard(true);
-                        }}
-                      />
-                      <FaTrash
-                        style={{ color: "red", cursor: "pointer" }}
-                        onClick={() => {
-                          setListId(list.id);
-                          setCardId(card.id);
-                          setModalDeleteCard(true);
-                        }}
-                      />
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
-          </div>
-        ))}
+          ) : null
+        )}
       </div>
 
       {/* MODALES d'actions */}
