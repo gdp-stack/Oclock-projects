@@ -27,7 +27,7 @@ export interface CardType {
 
 export interface ListType {
   id: number;
-  name: string;
+  title: string;
   created_at: string;
   updated_at: string;
   cards: CardType[];
